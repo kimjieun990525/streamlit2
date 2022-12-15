@@ -77,10 +77,7 @@ def main() :
 
     st.dataframe(df[selected_list])
 
-    if len(selected_list) == 0 :
-        st.text('')
-    else :
-        st.dataframe(df[selected_list])
+
 
     # 슬라이더
     age = st.slider('나이', 1, 100)
@@ -97,6 +94,7 @@ def main() :
 
     with st.expander('hello') :   # 외우지 말고.. 그냥 통째로 가져다 써라..
         st.text('안녕하세요~')
+        st.text('즐거운 공부 시간입니다.')
 
 
 
