@@ -3,7 +3,7 @@ import pandas as pd
 
 
 # UI 요소들을 처리하는 방법
-# 버튼, 라디오버튼, 셀렉트박스, 멀티셀렉트, 슬라이더, 
+# 버튼, 라디오버튼, 셀렉트박스, 멀티셀렉트, 슬라이더
 
 def main() :
     df = pd.read_csv('streamlit_data/iris.csv')
@@ -48,18 +48,17 @@ def main() :
     language = ['Python', 'C', 'JAVA', 'PHP', 'GO']
 
     my_choice = st.selectbox('좋아하는 언어를 선택하세요', language )
-    print(my_choice)
     # 유저가 선택하면, 해당 언어를 다음처럼 표시해준다.
     # 저는 Python 언어를 가장 좋아합니다.
     # 저는 JAVA 언어를 가장 좋아합니다.
-    st.write('저는 {} 언어를 가장 좋아합니다.'.format(my_choice))
-# write든 tex든.. 편한대로 ^^
-    st.text('저는 {} 언어를 가장 좋아합니다.'.format(my_choice))
 
-    # 만약 유저가 선택한 언어가, 파이썬이나 PHP나 Go 언어이면,
-    # 배우기 쉽습니다. 라고 화면에 보여주고,
-    # 자바나 씨언어를 선택하면
-    # 배우기 어렵습니다. 라고 화면에 보여주세요.
+    st.write('저는 {} 언어를 가장 좋아합니다.'.format(my_choice))
+    st.text('저는 {} 언어를 가장 좋아합니다.'.format(my_choice))
+    # write든 tex든 편한 거 사용하기
+
+
+    # 만약 유저가 선택한 언어가, '파이썬'이나 'PHP'나 'Go' 언어이면 '배우기 쉽습니다.' 출력,
+    # 자바나 'C' 언어를 선택하면 '배우기 어렵습니다.' 라고 화면에 출력하세요.
 
     if my_choice == 'Python' or my_choice == 'GO' or my_choice == 'PHP':
         st.write('배우기 쉽습니다.')
